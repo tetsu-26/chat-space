@@ -10,7 +10,7 @@
 
 ###Assosiation
 - has_many :members
-- has_many :chat
+- has_many :messages
 - has_many :groups, through: :members
 
 ##groupsテーブル
@@ -21,15 +21,16 @@
 
 ###Assosiation
 - has_many :users, through: :members
-- has_many :chat
+- has_many :messages
 - has_many :members
 
-##chatテーブル
+##messagesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
 |message|text|null: false|
+|image|string||
 
 ###Assosiation
 - has_many :users
