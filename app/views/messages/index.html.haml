@@ -1,0 +1,40 @@
+%body
+  %header.header
+    .header--top
+      %p.header--top__create-group グループを作成しました
+    .header--in
+      .header--in__left
+        .in-lefthead
+          .name-tag
+            %p.name-tag__user-name user_name
+            %a{:href => "#"}
+              %i.fa.fa-cog
+            %a{:href => "#"}
+              %i.fa.fa-edit
+      .header--in__right
+        .in-righthead.group
+          %p.group--name group_name
+          %p.group--member group_member
+          %a.group--edit{:href => "edit"}
+            .group--edit__name Edit
+  .content
+    .content--left
+      .in-leftcontent
+        .group
+          %p.group__name group-name
+          %p.group__comment group-comment
+    .content--main
+      .in-rightcontent
+        .submit
+          %ul.submit--record
+            %li.submit--record__name submit-user
+            %li.submit--record__date submit-date
+          %p.submit--text submit-text
+      %footer.footer
+        %form.submit-form
+          .submit-form--message-form
+            %input.text-box{:name => "messaage", :placeholder => "MESSAGE", "type-" => ""}/
+            %a{:href => "#"}
+              %i.fa.fa-image
+          %a{:href => "#"}
+            %input.submit-button{:type => "submit", :value => "Send"}/
