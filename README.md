@@ -20,11 +20,11 @@
 |name|string|null: false|
 
 ###Assosiation
-- has_many :users
+- has_many :users, through: :members
 - has_many :chat
 - has_many :members
 
-##groupsテーブル
+##chatテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -32,8 +32,7 @@
 |message|text|null: false|
 
 ###Assosiation
-- belongs_to :chat
-- has_many :users, through: :members
+- has_many :users
 - has_many :members
 
 ## membersテーブル
