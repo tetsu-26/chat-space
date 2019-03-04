@@ -1,11 +1,46 @@
 # README
 
+##usersテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false, unique: true, index: true|
+
+###Assosiation
+- has_many :members
+- has_many :messages
+- has_many :groups, through: :members
+
+##groupsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+
+###Assosiation
+- has_many :users, through: :members
+- has_many :messages
+- has_many :members
+
+##messagesテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|user_id|references|null: false, foreign_key: true|
+|group_id|references|null: false, foreign_key: true|
+|message|text||
+|image|string||
+
+###Assosiation
+- belongs_to :user
+- belongs_to :group
+
 ## membersテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
+|group_id|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :group
