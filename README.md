@@ -4,22 +4,20 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|user_name|string|null: false|
+|name|string|null: false|
 |email|index|null: false, unique: true|
 |password|string|null: false, default 8|
 
 ###Assosiation
 - has_many :members
 - has_many :chat
-- belongs_to :groups
+- has_many :groups
 
 ##groupsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|group_id|integer|null: false, foreign_key: true|
-|group_name|string|null: false|
+|name|string|null: false|
 
 ###Assosiation
 - has_many :users
@@ -30,13 +28,13 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|group_id|integer|null: false, foreign_key: true|
 |user_id|integer|null: false, foreign_key: true|
 |message|text|null: false|
 
 ###Assosiation
 - belongs_to :chat
-- belongs_to :user
+- belongs_to :users
+- has_many :members
 
 ## membersテーブル
 
