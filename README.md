@@ -11,7 +11,7 @@
 ###Assosiation
 - has_many :members
 - has_many :chat
-- has_many :groups
+- has_many :groups, through: :members
 
 ##groupsテーブル
 
@@ -33,7 +33,7 @@
 
 ###Assosiation
 - belongs_to :chat
-- belongs_to :users
+- has_many :users, through: :members
 - has_many :members
 
 ## membersテーブル
