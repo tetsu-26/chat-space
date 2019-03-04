@@ -33,8 +33,8 @@
 |image|string||
 
 ###Assosiation
-- has_many :users
-- has_many :members
+- belongs_to :user
+- belongs_to :group
 
 ## membersテーブル
 
