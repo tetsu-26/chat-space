@@ -1,0 +1,204 @@
+@import "./samplecode";
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+.header-top{
+  width: 100%;
+  height: 21px;
+  background-color: #38AEF0;
+  .create-group{
+    text-align: center;
+    color: $body-white;
+  }
+}
+
+.header-in {
+  height: 100px;
+  position: fixed;
+  width: 100%;
+  .header-left {
+    background-color: #253141;
+    width: 300px;
+    height: 100%;
+    float: left;
+  }
+  .header-right{
+    background-color: $body-white;
+    width: $con-width;
+    height: 100%;
+    float: right;
+    border-bottom:solid 1px #eeeeee;
+  }
+}
+
+.in-lefthead{
+  height: 100%;
+  width: 260px;
+  margin: auto;
+  .name-tag{
+    .user-name{
+      float: left;
+      padding: 38px 0;
+      font-size: 16px;
+      font-weight: bold;
+      color: $left-textcolor;
+    }
+    .fa-edit{
+      float: right;
+      margin: 42px 8px;
+      color: $left-textcolor;
+      font-size: 16px;
+    }
+    .fa-cog{
+      float: right;
+      padding: 42px 0;
+      color: $left-textcolor;
+      font-size: 16px;
+    }
+  }
+}
+
+.in-leftcontent{
+  height: 100%;
+  width: 260px;
+  margin: auto;
+  padding-top: 20px;
+  .group{
+    height: auto;
+    margin: 0;
+    .group-name{
+      font-size: 15px;
+      font-weight: bold;
+      color: $left-textcolor;
+      margin: 0;
+    }
+    .group-comment{
+      margin-top: 5px;
+      font-size: 11px;
+      font-weight: bold;
+      color: $left-textcolor;
+      margin-bottom: 40px;
+    }
+  }
+}
+
+.in-righthead{
+  height: 100%;
+  width: calc(100vw - 460px);
+  margin: 0 auto;
+  position: relative;
+  .group-name{
+    padding-top: 35px;
+    width: 30%;
+    font-size: 20px;
+    color: #333333;
+  }
+  .group-member{
+    margin-top: 15px;
+    width: 30%;
+    font-size: 12px;
+    color: $member-color;
+  }
+    .edit-name{
+      border: solid;
+      border-width: 1px;
+      width: 80px;
+      height: 40px;
+      color: #38AEF0;
+      position: absolute;
+      right: 0;
+      bottom: 26px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+}
+
+.in-rightcontent{
+  height: 100%;
+  width: calc(100vw - 460px);
+  margin: 46px auto 0;
+  .submit-table{
+    .submit-record{
+      .submit-name{
+        float: left;
+        font-size: 16px;
+        color: #434a54;
+      }
+      .submit-date{
+        font-size: 12px;
+        color: $member-color;
+        margin-left: 10px;
+      }
+    }
+    .submit-text{
+      font-size: 14px;
+      color: #434a54;
+      margin: 10px 0 40px;
+    }
+  }
+  margin-bottom: 40px;
+}
+
+.contents {
+  background-color: $body-white;
+  height: calc(100vw - 100px);
+  padding-top: 100px;
+  width: 100%;
+  .left-content {
+      background-color: #2f3e51;
+      height: 100%;
+      width: 300px;
+      float: left;
+      position: fixed;
+  }
+  .contents-main {
+    height: 100%;
+    width: $con-width;
+    float: right;
+  }
+}
+
+.footer {
+  height: 90px;
+  background-color: #CCCCCC;
+  width: calc(100vw - 300px);
+  position: fixed;
+  bottom: 0;
+  .submit-form{
+    height: 50px;
+    width: calc(100% - 80px);
+    margin: 20px 40px;
+    display: flex;
+    .message-form{
+      height: 50px;
+      width: 100%;
+      margin: 0 15px 0 10px;
+      position: relative;
+      .text-box{
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        right: 25px;
+      }
+      .fa-image{
+        position: absolute;
+        color: #000;
+        font-size: 22px;
+        top: 16px;
+        right: 9px;
+        bottom: 14px;
+      }
+    }
+    .submit-button{
+      height: 100%;
+      width: 100px;
+      background-color: #38AEF0;
+      color: $body-white;
+    }
+  }
+}
