@@ -1,0 +1,203 @@
+@import "./samplecode";
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.header{
+    &--top{
+      width: 100%;
+      height: 21px;
+      background-color: #38AEF0;
+      &__create-group{
+        text-align: center;
+        color: $body-white;
+      }
+    }
+  &--in {
+    height: 100px;
+    position: fixed;
+    width: 100%;
+    &__left {
+      background-color: #253141;
+      width: 300px;
+      height: 100%;
+      float: left;
+      .in-lefthead{
+        height: 100%;
+        width: 260px;
+        margin: auto;
+        .name-tag{
+          &__user-name{
+            float: left;
+            padding: 38px 0;
+            font-size: 16px;
+            font-weight: bold;
+            color: $left-textcolor;
+          }
+          .fa-edit{
+            float: right;
+            margin: 42px 8px;
+            color: $left-textcolor;
+            font-size: 16px;
+          }
+          .fa-cog{
+            float: right;
+            padding: 42px 0;
+            color: $left-textcolor;
+            font-size: 16px;
+          }
+        }
+      }
+    }
+    &__right{
+      background-color: $body-white;
+      width: $con-width;
+      height: 100%;
+      float: right;
+      border-bottom:solid 1px #eeeeee;
+      .group{
+        height: 100%;
+        width: calc(100vw - 460px);
+        margin: 0 auto;
+        position: relative;
+        &--name{
+          padding-top: 35px;
+          width: 30%;
+          font-size: 20px;
+          color: #333333;
+         }
+        &--member{
+          margin-top: 15px;
+          width: 30%;
+          font-size: 12px;
+          color: $member-color;
+        }
+        &--edit{
+          &__name{
+            border: solid;
+            border-width: 1px;
+            width: 80px;
+            height: 40px;
+            color: #38AEF0;
+            position: absolute;
+            right: 0;
+            bottom: 26px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+        }
+      }
+    }
+  }
+}
+
+.content{
+  background-color: $body-white;
+  height: calc(100vw - 100px);
+  padding-top: 100px;
+  width: 100%;
+  &--left{
+    background-color: #2f3e51;
+    height: 100%;
+    width: 300px;
+    float: left;
+    position: fixed;
+    .in-leftcontent{
+      height: 100%;
+      width: 260px;
+      margin: auto;
+      padding-top: 20px;
+      .group{
+        height: auto;
+        margin: 0;
+        &__name{
+          font-size: 15px;
+          font-weight: bold;
+          color: $left-textcolor;
+          margin: 0;
+        }
+        &__comment{
+          margin-top: 5px;
+          font-size: 11px;
+          font-weight: bold;
+          color: $left-textcolor;
+          margin-bottom: 40px;
+        }
+      }
+    }
+  }
+  &--main{
+    height: 100%;
+    width: $con-width;
+    float: right;
+    .in-rightcontent{
+      height: 100%;
+      width: calc(100vw - 460px);
+      margin: 46px auto 0;
+      .submit{
+        &--record{
+          &__name{
+            float: left;
+            font-size: 16px;
+            color: #434a54;
+          }
+          &__date{
+            font-size: 12px;
+            color: $member-color;
+            margin-left: 10px;
+          }
+        }
+        &--text{
+          font-size: 14px;
+          color: #434a54;
+          margin: 10px 0 40px;
+        }
+      }
+      margin-bottom: 40px;
+    }
+  }
+  .footer {
+    height: 90px;
+    background-color: #CCCCCC;
+    width: calc(100vw - 300px);
+    position: fixed;
+    bottom: 0;
+    .submit-form{
+      height: 50px;
+      width: calc(100% - 80px);
+      margin: 20px 40px;
+      display: flex;
+      &--message-form{
+        height: 50px;
+        width: 100%;
+        margin: 0 15px 0 10px;
+        position: relative;
+        .text-box{
+          height: 100%;
+          width: 100%;
+          position: absolute;
+          left: 0;
+          right: 25px;
+        }
+        .fa-image{
+          position: absolute;
+          color: #000;
+          font-size: 22px;
+          top: 16px;
+          right: 9px;
+          bottom: 14px;
+        }
+      }
+      .submit-button{
+        height: 100%;
+        width: 100px;
+        background-color: #38AEF0;
+        color: $body-white;
+      }
+    }
+  }
+}
