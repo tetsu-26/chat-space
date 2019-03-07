@@ -7,9 +7,9 @@
 |name|string|null: false, unique: true, index: true|
 
 ###Assosiation
-- has_many :members
+- has_many :group_users
 - has_many :messages
-- has_many :groups, through: :members
+- has_many :groups, through: :group_users
 
 ##groupsテーブル
 
@@ -18,9 +18,9 @@
 |name|string|null: false|
 
 ###Assosiation
-- has_many :users, through: :members
+- has_many :users, through: :group_users
 - has_many :messages
-- has_many :members
+- has_many :group_users
 
 ##messagesテーブル
 
@@ -35,7 +35,7 @@
 - belongs_to :user
 - belongs_to :group
 
-## membersテーブル
+## group_usersテーブル
 
 |Column|Type|Options|
 |------|----|-------|
