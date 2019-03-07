@@ -79,18 +79,21 @@ html, body {
           color: $member-color;
         }
         &--edit{
+          list-style: none;
+          border: solid;
+          border-width: 1px;
+          width: 80px;
+          height: 40px;
+          color: #38AEF0;
+          position: absolute;
+          right: 0;
+          bottom: 26px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
           &__name{
-            border: solid;
-            border-width: 1px;
-            width: 80px;
-            height: 40px;
             color: #38AEF0;
-            position: absolute;
-            right: 0;
-            bottom: 26px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            text-decoration: none;
           }
         }
       }
