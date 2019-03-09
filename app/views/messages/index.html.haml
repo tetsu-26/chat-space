@@ -1,43 +1,31 @@
 %body
-  %header.header
-    .header--top
-      %p.header--top__create-group グループを作成しました
-    .header--in
-      .header--in__left
-        .in-lefthead
-          .name-tag
-            %p.name-tag__user-name
-              = current_user.name
-            %li.list
-              = link_to edit_user_path(current_user) do
-                = fa_icon 'cog', class: 'icon-cog'
-            %li.list
-              = link_to new_group_path do
-                = fa_icon 'pencil-square-o', class: 'icon-edit'
+  .wrapper
+    = render 'shared/side_bar'
+    %header.header
+      / .header--top
+      /   %p.header--top__create-group グループを作成しました
       .header--in__right
         .in-righthead.group
-          %p.group--name group_name
+          %p.group--name
+            = @group.name
           %p.group--member group_member
           %li.group--edit
-            = link_to 'Edit', '/groups/(current_group)/edit', class: 'group--edit__name'
-  .content
-    .content--left
-      .in-leftcontent
-        .group
-          %p.group__name group-name
-          %p.group__comment group-comment
-    .content--main
-      .in-rightcontent
-        .submit
-          %ul.submit--record
-            %li.submit--record__name submit-user
-            %li.submit--record__date submit-date
-          %p.submit--text submit-text
-      %footer.footer
-        %form.submit-form
-          .submit-form--message-form
-            %input.text-box{:name => "messaage", :placeholder => "MESSAGE", "type-" => ""}/
-            %a{:href => "#"}
-              %i.fa.fa-image
-          %a{:href => "#"}
-            %input.submit-button{:type => "submit", :value => "Send"}/
+            = link_to 'Edit', 'edit_group_path(@group)', class: 'group--edit__name'
+    .content
+      .content--main
+        .in-rightcontent
+          = render @messages
+          / = @messages.each do |message|
+          /   = render partial: "message", locals: { message: message }
+        %footer.footer
+          .submit-form
+            .submit-form--message-form
+              .form
+                = form_for [@group, @message] do |f|
+                  = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+                  .form__mask
+                    = f.label :image, class: 'form__mask__image' do
+                      = fa_icon 'picture-o', class: 'icon'
+                      = f.file_field :image, class: 'hidden'
+                  = f.submit 'Send', class: 'form__submit'
+

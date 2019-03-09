@@ -1,0 +1,73 @@
+.side-bar{
+  height: 100%;
+  position: fixed;
+  .side--in__left{
+    background-color: #253141;
+    width: 300px;
+    height: 100px;
+    .in-lefthead{
+      height: 100px;
+      width: 260px;
+      margin: auto;
+      .name-tag{
+        &__user-name{
+          float: left;
+          padding: 38px 0;
+          font-size: 16px;
+          font-weight: bold;
+          color: $left-textcolor;
+          }
+        .list{
+          list-style: none;
+          .icon-edit{
+            float: right;
+            margin: 42px 8px;
+            color: $left-textcolor;
+            font-size: 16px;
+          }
+          .icon-cog{
+            float: right;
+            padding: 42px 0;
+            color: $left-textcolor;
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+  content--left{
+    background-color: #2f3e51;
+    height: 100%;
+    width: 300px;
+    float: left;
+    position: fixed;
+    .in-leftcontent{
+      height: 100%;
+      width: 260px;
+      margin: auto;
+      padding-top: 20px;
+      .group{
+        height: auto;
+        margin: 0;
+        &a{
+          text-decoration: none;
+          &__name{
+            font-size: 15px;
+            font-weight: bold;
+            color: $left-textcolor;
+            margin: 0;
+            text-decoration: none;
+          }
+          &__comment{
+            margin-top: 5px;
+            font-size: 11px;
+            font-weight: bold;
+            color: $left-textcolor;
+            margin-bottom: 40px;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+}

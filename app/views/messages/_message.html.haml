@@ -1,0 +1,11 @@
+.in-rightcontent
+  .submit
+    %ul.submit--record
+      %li.submit--record__name
+        = message.user.name
+      %li.submit--record__date
+        = message.created_at.strftime("%Y/%m/%d %H:%M")
+    - if message.content.present?
+      %p.submit--text
+        = message.content
+    = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
