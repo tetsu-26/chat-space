@@ -26,7 +26,7 @@ html, body {
       height: 100%;
       float: left;
       .in-lefthead{
-        height: 100%;
+        height: 100px;
         width: 260px;
         margin: auto;
         .name-tag{
@@ -125,6 +125,7 @@ html, body {
           font-weight: bold;
           color: $left-textcolor;
           margin: 0;
+          text-decoration: none;
         }
         &__comment{
           margin-top: 5px;
@@ -132,11 +133,13 @@ html, body {
           font-weight: bold;
           color: $left-textcolor;
           margin-bottom: 40px;
+          text-decoration: none;
         }
       }
     }
   }
   &--main{
+    overflow: scroll;
     height: 100%;
     width: $con-width;
     float: right;
@@ -161,6 +164,8 @@ html, body {
           font-size: 14px;
           color: #434a54;
           margin: 10px 0 40px;
+          .lower-message__content{
+          }
         }
       }
       margin-bottom: 40px;
@@ -182,27 +187,30 @@ html, body {
         width: 100%;
         margin: 0 15px 0 10px;
         position: relative;
-        .text-box{
+        .form__message{
           height: 100%;
-          width: 100%;
+          width: 86%;
           position: absolute;
           left: 0;
           right: 25px;
         }
-        .fa-image{
+        .icon{
           position: absolute;
           color: #000;
           font-size: 22px;
           top: 16px;
-          right: 9px;
+          right: 125px;
           bottom: 14px;
         }
       }
-      .submit-button{
-        height: 100%;
+      .form__submit{
+        height: 50px;
         width: 100px;
         background-color: #38AEF0;
         color: $body-white;
+        position: absolute;
+        right: 0;
+        top: 0;
       }
     }
   }
