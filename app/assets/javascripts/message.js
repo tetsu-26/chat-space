@@ -1,10 +1,15 @@
 $(document).on('turbolinks:load', function() {
   $(function(){
     function buildHTML(message){
-      // var img =  ""
-      // if (image.present?) {
-      //   img = ${message.img}
-      // }
+      var img = message.image ? `<img src=${ message.image } >` : "";
+
+    // var img = ${message.image};
+    // if(img = "") {
+    //   var img = ""
+    // }
+    // else{
+    //   img = ${message.image};
+    // }
       var html = `<div class="submit">
                     <ul class="submit--record">
                       <li class="submit--record__name">
@@ -16,7 +21,7 @@ $(document).on('turbolinks:load', function() {
                       <p class="submit--text">
                         ${message.content}
                       </p>
-
+                      ${img}
                     </ul>
                   </div>`
       return html;
@@ -37,8 +42,7 @@ $(document).on('turbolinks:load', function() {
         var html = buildHTML(data);
         $('.in-rightcontent').append(html)
         $("html,body").animate({scrollTop: $('.in-rightcontent')[0].scrollHeight}, 'fast');
-        $('.hidden').val('')
-        $('.form__message').val('')
+        $('form')[0].reset();
       })
       .fail(function(){
         alert('error');
