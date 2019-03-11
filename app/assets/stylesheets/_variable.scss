@@ -58,9 +58,10 @@ html, body {
     &__right{
       background-color: $body-white;
       width: $con-width;
-      height: 100%;
       float: right;
+      margin-left: 300px;
       border-bottom:solid 1px #eeeeee;
+      position: fixed;
       .group{
         height: 100%;
         width: calc(100vw - 460px);
@@ -139,12 +140,10 @@ html, body {
     }
   }
   &--main{
-    overflow: scroll;
     height: 100%;
     width: $con-width;
     float: right;
     .in-rightcontent{
-      height: 100%;
       width: calc(100vw - 460px);
       margin: 46px auto 0;
       .submit{
@@ -168,7 +167,7 @@ html, body {
           }
         }
       }
-      margin-bottom: 40px;
+      padding-bottom: 90px;
     }
   }
   .footer {
