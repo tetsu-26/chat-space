@@ -9,7 +9,7 @@ class GroupsController < ApplicationController
     @group.users << current_user
   end
 
-  def index
+  def edit
   end
 
   def create
