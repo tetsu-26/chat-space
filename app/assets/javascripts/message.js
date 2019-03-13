@@ -41,7 +41,7 @@ $(document).on('turbolinks:load', function() {
       })
     })
 
-    var new_message_insert = setInterval(reload, 1000*5);
+    var current_page_reload = setInterval(reload, 1000*5);
     function reload(){
       var new_message_id = $('.submit:last').data('id');
       $.ajax({
