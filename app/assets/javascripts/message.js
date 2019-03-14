@@ -1,8 +1,8 @@
 $(document).on('turbolinks:load', function() {
   $(function(){
-    function buildHTML(message){
+    function buildSendMessageHTML(message){
       var img = message.image ? `<img src=${ message.image } >` : "";
-      var html = `<div class="submit">
+      var html = `<div class="submit" data-id=${ message.id}>
                     <ul class="submit--record">
                       <li class="submit--record__name">
                         ${message.user_name}
@@ -31,7 +31,7 @@ $(document).on('turbolinks:load', function() {
         contentType: false
       })
       .done(function(data){
-        var html = buildHTML(data);
+        var html = buildSendMessageHTML(data);
         $('.in-rightcontent').append(html)
         $("html,body").animate({scrollTop: $('.in-rightcontent')[0].scrollHeight}, 'fast');
         $('form')[0].reset();
@@ -40,5 +40,28 @@ $(document).on('turbolinks:load', function() {
         alert('error');
       })
     })
+
+    var current_page_reload = setInterval(autoUpdate, 1000*5);
+    function autoUpdate(){
+      var new_message_id = $('.submit:last').data('id');
+      $.ajax({
+        type: 'GET',
+        url: location.href,
+        data: {id: new_message_id},
+        dataType: 'json'
+      })
+      .done(function(new_messages) {
+        if(new_messages.length != 0 ){
+          new_messages.forEach(function(new_message) {
+            var AddHTML = buildSendMessageHTML(new_message);
+            $('.in-rightcontent').append(AddHTML);
+          })
+          $("html,body").animate({scrollTop: $('.in-rightcontent')[0].scrollHeight}, 'fast');
+        }
+      })
+      .fail(function(messages) {
+        alert('更新できませんでした。');
+      });
+    };
   })
 });
