@@ -60,7 +60,7 @@ $(document).on('turbolinks:load', function() {
         }
       })
       .fail(function(messages) {
-        alert('更新できませんでした。');
+        console.log('更新できませんでした。');
       });
     };
   })
