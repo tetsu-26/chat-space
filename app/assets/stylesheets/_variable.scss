@@ -75,7 +75,7 @@ html, body {
          }
         &--member{
           margin-top: 15px;
-          width: 30%;
+          width: 100%;
           font-size: 12px;
           color: $member-color;
         }
@@ -188,7 +188,7 @@ html, body {
         position: relative;
         .form__message{
           height: 100%;
-          width: 86%;
+          width: 88%;
           position: absolute;
           left: 0;
           right: 25px;
