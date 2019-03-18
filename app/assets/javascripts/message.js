@@ -32,8 +32,10 @@ $(document).on('turbolinks:load', function() {
       })
       .done(function(data){
         var html = buildSendMessageHTML(data);
-        $('.in-rightcontent').append(html)
-        $("html,body").animate({scrollTop: $('.in-rightcontent')[0].scrollHeight}, 'fast');
+        $('.in-rightcontent').append(html);
+        var ojheight = $('.in-rightcontent').height();
+        console.log(ojheight);
+        $(".content").animate({scrollTop: ojheight}, 'fast');
         $('form')[0].reset();
       })
       .fail(function(){

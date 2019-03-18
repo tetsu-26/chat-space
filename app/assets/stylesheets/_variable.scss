@@ -104,9 +104,11 @@ html, body {
 
 .content{
   background-color: $body-white;
-  height: calc(100vw - 100px);
+  height: calc(100vh - 200px);
   padding-top: 100px;
-  width: 100%;
+  width: calc(100vw - 300px);
+  float: right;
+  overflow: scroll;
   &--left{
     background-color: #2f3e51;
     height: 100%;
@@ -140,7 +142,6 @@ html, body {
     }
   }
   &--main{
-    height: 100%;
     width: $con-width;
     float: right;
     .in-rightcontent{
