@@ -3,5 +3,5 @@ json.array! @new_message do |new_message|
   json.id  new_message.id
   json.user_name  new_message.user.name
   json.image new_message.image.url
-  json.date new_message.created_at.strftime("%Y年%-m月%-d日 %a")
+  json.date new_message.created_at.strftime("%Y/%m/%d %H:%M")
 end
